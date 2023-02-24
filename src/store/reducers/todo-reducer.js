@@ -1,10 +1,11 @@
+import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from '../constans/todo-constans'
 let todoIdNumber = 0;
 
 export const todoList = (state = [], action) => {
 
 
   switch (action.type) {
-    case "ADD_TODO": {
+    case ADD_TODO: {
       return [
         ...state,
         {
@@ -14,10 +15,10 @@ export const todoList = (state = [], action) => {
         }
       ];
     }
-    case "REMOVE_TODO": {
+    case REMOVE_TODO: {
       return state.filter((todo) => todo.id !== action.id);
     }
-    case "TOGGLE_TODO": {
+    case TOGGLE_TODO: {
       return state.map((todo) =>
         todo.id === action.id
           ? {
