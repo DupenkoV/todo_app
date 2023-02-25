@@ -1,9 +1,9 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import { addTodo, toggleTodo, removeTodo } from "./store/actions/todo-actions";
-
+import {allTodo} from "./store/selectors/todos-selectors"
 export default function App() {
-  const todoList = useSelector((state) => state.todoList);
+  const todoList = useSelector(allTodo)
   const dispatch = useDispatch();
 
   return (
