@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setFilter } from '../store/actions/filter-actions'
-import { selectActiveFilter } from "../store/selectors/filter-selectors";
+import { setFilter } from '../store/filters/filter-actions'
+import { selectActiveFilter } from "../store/filters/filter-selectors";
 
 export const Filters = () => {
     const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from '../constans/todo-constans'
+import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from './todos-constans'
 let todoIdNumber = 0;
 
 export const todoList = (state = [], action) => {

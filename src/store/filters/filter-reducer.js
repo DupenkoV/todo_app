@@ -1,4 +1,4 @@
-import { SET_FILTER } from "../constans/filter-constans";
+import { SET_FILTER } from "./filter-constans";
 
 export const filters = (state = 'all', action) => {
     switch (action.type) {
