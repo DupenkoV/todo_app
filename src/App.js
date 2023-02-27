@@ -2,10 +2,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addTodo, toggleTodo, removeTodo } from "./store/actions/todo-actions";
 import {setFilter} from './store/actions/filter-actions'
-import {allTodo} from "./store/selectors/todos-selectors"
+import {selectVisibleTodos} from "./store/selectors/todos-selectors"
+import { selectActiveFilter } from "./store/selectors/filter-selectors";
 
 export default function App() {
-  const todoList = useSelector(allTodo)
+  const activeFilter = useSelector(selectActiveFilter)
+  const todoList = useSelector(state => selectVisibleTodos(state,activeFilter))
   const dispatch = useDispatch();
 
   return (
@@ -49,8 +51,8 @@ const NewTodo = () => {
 
 export const Filters = () => {
   const dispatch = useDispatch();
-  const activeFilter = useSelector(state => state.filters)
-  console.log(activeFilter)
+  const activeFilter = useSelector(selectActiveFilter)
+
   return (
     <div>
       <button onClick={() => {dispatch(setFilter('all'))}} style={{color: activeFilter === 'all' ? 'red' : 'black'}}>all</button>
