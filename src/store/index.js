@@ -3,6 +3,7 @@ import {combineReducers} from 'redux';
 import { filters } from './filters/filter-reducer'
 import { todoList } from "./todos/todos-reducer";
 import { loadState, saveState } from './local-storage'
+import throttle from 'lodash/throttle'
 
 export const rootReducer = combineReducers({
     todoList,
@@ -20,10 +21,10 @@ export const configureStore = () => {
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );
 
-  store.subscribe(() => {
+  store.subscribe(throttle(() => {
     saveState({
       todoList: store.getState().todoList,
     })
-  })
+  }, 1000))
   return store;
 } 
