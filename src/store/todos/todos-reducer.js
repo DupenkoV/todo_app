@@ -3,7 +3,7 @@ import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from './todos-constans'
 
 
 export const todoList = (state = [], action) => {
-  let todoIdNumber = state.length;
+  let todoIdNumber = state.length > 0 ? state[state.length - 1].id : 0
 
   switch (action.type) {
     case ADD_TODO: {
