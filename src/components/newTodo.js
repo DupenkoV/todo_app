@@ -6,6 +6,7 @@ export const NewTodo = () => {
     const handleSubmin = (event) => {
       event.preventDefault();
       dispatch(addTodo(event.target.title.value));
+      //как то ненравится как обрабатывается форма) с евентами, хотя мб я отвык
       event.target.reset();
     };
   
