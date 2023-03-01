@@ -10,7 +10,7 @@ export const todoList = (state = [], action) => {
       return [
         ...state,
         {
-          id: ++todoIdNumber,
+          id: ++todoIdNumber, //лучше напиши утилиту для формирования рандомной строчки в качестве айди или подключи либу
           title: action.title,
           completed: false
         }
