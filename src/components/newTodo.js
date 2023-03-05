@@ -1,12 +1,11 @@
 import { useDispatch } from "react-redux";
-import { addTodo } from "../store/todos/todos-actions";
+import { addTodo } from "../store/todos/todos-actionsCreators";
 
 export const NewTodo = () => {
     const dispatch = useDispatch();
     const handleSubmin = (event) => {
       event.preventDefault();
       dispatch(addTodo(event.target.title.value));
-      //как то ненравится как обрабатывается форма) с евентами, хотя мб я отвык
       event.target.reset();
     };
   

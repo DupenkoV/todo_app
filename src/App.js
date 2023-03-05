@@ -1,6 +1,6 @@
-import { Filters } from "./components/filters";
-import { TodoList } from "./components/todoList";
-import { NewTodo } from "./components/newTodo";
+import { Filters } from "./components/Filters";
+import { TodoList } from "./components/TodoList";
+import { NewTodo } from "./components/NewTodo";
 
 export default function App() {
 

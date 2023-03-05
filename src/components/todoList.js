@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleTodo, removeTodo } from "../store/todos/todos-actions";
+import { toggleTodo, removeTodo } from "../store/todos/todos-actionsCreators";
 import { selectVisibleTodos } from "../store/todos/todos-selectors"
 import { selectActiveFilter } from "../store/filters/filter-selectors";
 //компоненты лучше рассовать по папкам отдельным. названия файлов с большой буквы обычно, чтобы было понятно что это компонент и файлы index.js в каждом
@@ -9,6 +9,9 @@ export const TodoList = () => {
     const todoList = useSelector(state => selectVisibleTodos(state,activeFilter))
     const dispatch = useDispatch();
 
+    // const filterderTodos = () => {
+
+    // }
     return (
         <ul>
             {todoList.map((item) => (

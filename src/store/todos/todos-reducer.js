@@ -10,18 +10,18 @@ export const todoList = (state = [], action) => {
       return [
         ...state,
         {
-          id: ++todoIdNumber, //лучше напиши утилиту для формирования рандомной строчки в качестве айди или подключи либу
-          title: action.title,
+          id: ++todoIdNumber, 
+          title: action.payload,
           completed: false
         }
       ];
     }
     case REMOVE_TODO: {
-      return state.filter((todo) => todo.id !== action.id);
+      return state.filter((todo) => todo.id !== action.payload);
     }
     case TOGGLE_TODO: {
       return state.map((todo) =>
-        todo.id === action.id
+        todo.id === action.payload
           ? {
               ...todo,
               completed: !todo.completed
