@@ -1,13 +1,13 @@
 import { createStore } from "redux";
 import {combineReducers} from 'redux';
-import { filterSlice } from './filters/filter-reducer'
+import { filterSlice } from './filters/filterSlice'
 import { todoSlice } from "./todos/todosSlice";
 import { loadState, saveState } from './local-storage'
 import throttle from 'lodash/throttle'
 
 export const rootReducer = combineReducers({
     todoList: todoSlice.reducer,
-    filter: filterSlice,
+    filter: filterSlice.reducer,
 })
 
 
@@ -15,7 +15,7 @@ export const rootReducer = combineReducers({
 export const configureStore = () => {
   const persistedState = loadState();
   /**
-   * посмотри доку редакс тулкит (ссылка ниже) инициализация стора проще и ненадо допом цеплять инхенсер
+   * посмотри доку редакс тулкит (ссылка ниже) инициализация стора проще и ненадо допом цепляsть инхенсер
    * https://redux-toolkit.js.org/api/configureStore
    */
   const store = createStore(
