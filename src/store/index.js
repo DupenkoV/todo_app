@@ -1,13 +1,13 @@
 import { createStore } from "redux";
 import {combineReducers} from 'redux';
-import { filters } from './filters/filter-reducer'
-import { todoList } from "./todos/todos-reducer";
+import { filterSlice } from './filters/filter-reducer'
+import { todoSlice } from "./todos/todosSlice";
 import { loadState, saveState } from './local-storage'
 import throttle from 'lodash/throttle'
 
 export const rootReducer = combineReducers({
-    todoList,
-    filters,
+    todoList: todoSlice.reducer,
+    filter: filterSlice,
 })
 
 
