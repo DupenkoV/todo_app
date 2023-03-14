@@ -12,7 +12,7 @@ export const Filters = () => {
     }
 
     const buttonColor = (type) => {
-      if(activeFilter[0] === type) {
+      if(activeFilter === type) {
         return 'red'
       }
       return 'black'

@@ -3,7 +3,7 @@ export const allTodo = (state) => state.todoList;
 // если тебе нужна доп логика - это нужно писать или в редьюсере и соответственно менять стор или в самом компоненте, но не
 // в селекторе (ты значение в сторе не меняешь, но к тебе приходит не то что есть в сторе, а это нарушение патерна)
 export const selectVisibleTodos = (state, filter) => {
-    switch (filter[0]) {
+    switch (filter) {
         case 'all': {
             return state.todoList
         }
