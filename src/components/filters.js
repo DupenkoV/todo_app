@@ -12,8 +12,8 @@ export const Filters = () => {
     }
 
     const buttonColor = (type) => {
-      if(activeFilter === type) {
-        return 'color: red'
+      if(activeFilter[0] === type) {
+        return 'red'
       }
       return 'black'
     }
